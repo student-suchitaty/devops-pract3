@@ -1,0 +1,75 @@
+clc;
+clearvars;
+% Nutan Maharashtra Institute of Engineering and Technology
+% (NMIET, Pune)
+%LAB MANUAL
+%Student Name  : Muskan Samiyoddin Shaikh 
+%Department    : Computer Engineering
+%Course        : B.TECH
+%Division      : C
+%Roll No       : 35
+
+% Title
+disp('Ordinary Derivatives (Without syms)');
+
+% Define x values
+x = -5:0.1:5;
+
+% Define functions
+f = x.^3 + 5*x.^2 - 7;
+g = x.^3 + 7*x.^2 - 4;
+
+% Numerical differentiation
+df_dx = gradient(f, x);
+dg_dx = gradient(g, x);
+
+% Display sample output
+disp('Function f = x^3 + 5x^2 - 7');
+disp('Derivative of f (df/dx):');
+disp(df_dx(1:10));
+
+disp('Function g = x^3 + 7x^2 - 4');
+disp('Derivative of g (dg/dx):');
+disp(dg_dx(1:10));
+
+% Plot functions and derivatives
+figure;
+plot(x, f, 'b', x, df_dx, 'r');
+legend('f(x)', 'df/dx');
+title('Function f and its Derivative');
+xlabel('x');
+ylabel('Value');
+grid on;
+
+figure;
+plot(x, g, 'b', x, dg_dx, 'r');
+legend('g(x)', 'dg/dx');
+title('Function g and its Derivative');
+xlabel('x');
+ylabel('Value');
+grid on;
+
+
+
+output
+Ordinary Derivatives (Without syms)
+Function f = x^3 + 5x^2 - 7
+Derivative of f (df/dx):
+ Columns 1 through 8:
+
+   24.0100   23.0400   21.1300   19.2800   17.4900   15.7600   14.0900   12.4800
+
+ Columns 9 and 10:
+
+   10.9300    9.4400
+Function g = x^3 + 7x^2 - 4
+Derivative of g (dg/dx):
+ Columns 1 through 8:
+
+   4.2100   3.4400   1.9300   0.4800  -0.9100  -2.2400  -3.5100  -4.7200
+
+ Columns 9 and 10:
+
+  -5.8700  -6.9600
+
+[Execution complete with exit code 0]
